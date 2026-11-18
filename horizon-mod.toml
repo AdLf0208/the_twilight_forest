@@ -1,0 +1,25 @@
+id = "twilightforest"
+name = "The Twilight Forest"
+version = "0.2.0"
+description = """The Twilight Forest's portal and its dimension for Horizon: a water pool that a diamond
+lights into twilightforest:twilight_portal, and twilightforest:twilight_forest registered with the jar's
+own dimension type and a BiomeSource that reproduces twilightforest:twilight_biomes over the jar's
+biome grid for 14 of its 22 biomes, with the blocks its surface rule places. The terrain, the mod's
+structures, mobs, progression and client effects are not ported (notes.md)."""
+authors = ["Benimatic (Ben Mazur) and the Twilight Forest contributors", "AdLf0208"]
+# One flat package: the code in src/, compiled by the launcher against the game build [native]
+# pins, beside the assets/ and data/ it carries. The id is the resource namespace and the only
+# identity; Cargo's package name and version are not the mod's.
+api = "0.2"
+# The installation side, not the hook's: an integrated server belongs to the client installation,
+# so a single-player world or a LAN host needs both.
+side = "both"
+# The one value every manifest carries ("May add blocks, items, mob effects and entity types").
+# The shared manifest has exactly this value and unknown values are refused; it is a schema
+# requirement, not a claim — do not "correct" it.
+capabilities = ["registries"]
+
+[native]
+game = "26.3"
+horizon = "0b14f8acfd97fa2c750e42795249dcc981178ca4"
+mixins = "e59da9094f0c2fdda6c627fe9eff22dec6a906f0"

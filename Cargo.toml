@@ -1,0 +1,20 @@
+[package]
+# Port of The Twilight Forest 1.21.1-4.8.3345 (TeamTwilight/twilightforest, LGPL-2.1). Minecraft
+# Java 1.21.1 NeoForge; the port targets Horizon 26.3 at the pin in horizon-mod.toml. Clean-room
+# Rust rewrite from the mod's behaviour (FINDINGS.md), distributed under LGPL-2.1 with this
+# source; no upstream asset byte is packaged (PROVENANCE.md, tools/check_provenance.py).
+#
+# Cargo's name and version are not the mod's identity: horizon-mod.toml is.
+name = "twilightforest"
+version = "0.2.0"
+edition = "2024"
+license = "LGPL-2.1"
+description = "The Twilight Forest's portal and dimension for Horizon"
+publish = false
+
+[dependencies]
+# The pinned SDK's API crate, fetched into .horizon/sdk/ by any `cargo horizon-mod` command (the
+# launcher builds against its own copy of the same build). Any other registry dependency must be
+# pinned with `horizon-launcher native-lock .` before building — this port has none on purpose
+# (notes.md, "the glue's one dependency").
+horizon-mod-api = { path = ".horizon/sdk/api/crates/horizon-mod-api" }
