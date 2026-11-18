@@ -1,0 +1,48 @@
+{
+  "template": "minecraft:barrier",
+  "item": false,
+  "properties": {
+    "light": 11,
+    "sounds": "minecraft:glass",
+    "hardness": -1.0,
+    "occludes": false
+  },
+  "state_properties": {
+    "is_one_way": {
+      "type": "boolean"
+    }
+  },
+  "default_state": {
+    "is_one_way": "false"
+  },
+  "collision_shapes": {
+    "properties": [
+      "is_one_way"
+    ],
+    "values": {
+      "true": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.8125,
+          1.0
+        ]
+      ]
+    },
+    "default": []
+  },
+  "shapes": {
+    "default": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.8125,
+        1.0
+      ]
+    ]
+  }
+}
